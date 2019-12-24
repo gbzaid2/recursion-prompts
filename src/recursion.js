@@ -60,12 +60,17 @@ var isEven = function(n) {
 // sumBelow(10); // 45
 // sumBelow(7); // 21
 var sumBelow = function(n) {
+<<<<<<< HEAD
 
-    if ( n === 1 || n === 0) return 0;
-    return 0 + sumBelow(n-1);
+=======
+    if (n === 0 || n === 1 || n === -1) return 0;
+    if (n < 0){
+        return (n + 1) + sumBelow(n + 1);
+    } else {
+        return (n - 1) + sumBelow(n - 1);
+    }
     
-    
-
+>>>>>>> fb8d5df3f784425fe7e3ee0132e094a580386f42
 };
 
 var sumBelowHelper = function(n){
@@ -80,13 +85,16 @@ var sumBelowHelper = function(n){
 // 6. Get the integers within a range (x, y).
 // range(2,9); // [3,4,5,6,7,8]
 var range = function(x, y) {
-    var results = [];
-    if (x === y) {
-        return;
+<<<<<<< HEAD
+
+=======
+
+    if (y - x < 2){
+        return [];
     } else {
-        results.push(x)
+        return [x+1].concat(range(x+1,y));
     }
-    results.push();
+>>>>>>> fb8d5df3f784425fe7e3ee0132e094a580386f42
 };
 
 // 7. Compute the exponent of a number.
@@ -95,6 +103,25 @@ var range = function(x, y) {
 // exponent(4,3); // 64
 // https://www.khanacademy.org/computing/computer-science/algorithms/recursive-algorithms/a/computing-powers-of-a-number
 var exponent = function(base, exp) {
+    if (exp === 1) {
+        return base;
+    } else if (exp === 0){
+        return 1;
+    } else if (exp === -1){
+        return Number.parseFloat(1/base).toFixed(2);
+    }
+    if (exp < 0){
+        return Number.parseFloat(1/base).toFixed(2) * exponent(base, exp + 1)
+    } else {
+        return base * exponent(base, exp - 1);
+    }
+
+    // exponent(5, -4) -> 1/5
+    // exponent(5, -3) -> 1/5
+    // exponent(5, -2) -> 1/5
+    // exponent(5, -1) -> 1/5
+
+    
 };
 
 // 8. Determine if a number is a power of two.
@@ -102,6 +129,15 @@ var exponent = function(base, exp) {
 // powerOfTwo(16); // true
 // powerOfTwo(10); // false
 var powerOfTwo = function(n) {
+    if (n === 1){
+        return true;
+    } else if (n >= 2){
+        return powerOfTwo(n/2); 
+    } else if (n < 1) {
+        return false;
+    } else {
+        return false;
+    }
 };
 
 // 9. Write a function that reverses a string.
