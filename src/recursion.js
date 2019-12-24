@@ -60,9 +60,6 @@ var isEven = function(n) {
 // sumBelow(10); // 45
 // sumBelow(7); // 21
 var sumBelow = function(n) {
-<<<<<<< HEAD
-
-=======
     if (n === 0 || n === 1 || n === -1) return 0;
     if (n < 0){
         return (n + 1) + sumBelow(n + 1);
@@ -70,7 +67,6 @@ var sumBelow = function(n) {
         return (n - 1) + sumBelow(n - 1);
     }
     
->>>>>>> fb8d5df3f784425fe7e3ee0132e094a580386f42
 };
 
 var sumBelowHelper = function(n){
@@ -85,16 +81,12 @@ var sumBelowHelper = function(n){
 // 6. Get the integers within a range (x, y).
 // range(2,9); // [3,4,5,6,7,8]
 var range = function(x, y) {
-<<<<<<< HEAD
-
-=======
 
     if (y - x < 2){
         return [];
     } else {
         return [x+1].concat(range(x+1,y));
     }
->>>>>>> fb8d5df3f784425fe7e3ee0132e094a580386f42
 };
 
 // 7. Compute the exponent of a number.
