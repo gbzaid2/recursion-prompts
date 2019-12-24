@@ -58,10 +58,10 @@ var exponent = function(base, exp) {
     } else if (exp === 0){
         return 1;
     } else if (exp === -1){
-        return 1/base;
+        return Number.parseFloat(1/base).toFixed(2);
     }
     if (exp < 0){
-        return (1/base) * exponent(base, exp + 1)
+        return Number.parseFloat(1/base).toFixed(2) * exponent(base, exp + 1)
     } else {
         return base * exponent(base, exp - 1);
     }
@@ -79,6 +79,15 @@ var exponent = function(base, exp) {
 // powerOfTwo(16); // true
 // powerOfTwo(10); // false
 var powerOfTwo = function(n) {
+    if (n === 1){
+        return true;
+    } else if (n >= 2){
+        return powerOfTwo(n/2); 
+    } else if (n < 1) {
+        return false;
+    } else {
+        return false;
+    }
 };
 
 // 9. Write a function that reverses a string.
